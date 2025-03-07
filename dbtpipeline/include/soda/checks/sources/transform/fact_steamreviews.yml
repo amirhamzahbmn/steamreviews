@@ -1,0 +1,25 @@
+# dim_steamreviews.sql
+    - schema:
+        fail:
+            when required column missing: [recommendation_id, steam_appid, language, review, timestamp_created, timestamp_updated, voted_up, votes_up, votes_funny, steam_purchase, received_for_free, written_during_early_access, author_steamsid]
+            when wrong column type:
+                recommendation_id: string
+                steam_appid: string
+                language: string
+                review: string
+                timestamp_created: datetime
+                timestamp_updated: datetime
+                voted_up: bool
+                votes_up: int
+                steam_purchase: bool
+                received_for_free: bool
+                written_during_early_access: bool
+                author_steamid: string
+    - duplicate_count(recommendation_id) = 0:
+        name: All recommendation_id are unique
+    - missing_count(recommendation_id) = 0:
+        name: No recommendation_id nulls present
+    - duplicate_count(steam_appid) = 0:
+        name: All steam_appids are unique
+    - missing_count(steam_appid) = 0:
+        name: No steam_appid nulls present

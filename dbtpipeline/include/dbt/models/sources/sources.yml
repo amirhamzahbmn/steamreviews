@@ -1,0 +1,10 @@
+# sources.yml
+version: 2
+
+sources:
+  - name: steam_reviews
+    database: steam-reviews-zc # Put the project id!
+
+    tables:
+      - name: raw_steam_reviews
+      - name: raw_steamappdetails

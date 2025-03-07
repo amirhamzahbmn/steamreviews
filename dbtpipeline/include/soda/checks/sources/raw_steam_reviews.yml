@@ -1,0 +1,12 @@
+checks for raw_steam_reviews:
+  - schema:
+      fail:
+        when required column missing: [recommendationid, language, review, timestamp_created, timestamp_updated, voted_up, votes_up]
+        when wrong column type:
+          recommendationid: string
+          language: string
+          review: string
+          timestamp_created: string
+          timestamp_updated: string
+          voted_up: string
+          votes_up: string

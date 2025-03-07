@@ -1,0 +1,14 @@
+# profiles.yml
+
+steam_reviews:
+ target: dev
+ outputs:
+  dev:
+    type: bigquery
+    method: service-account
+    keyfile: /usr/local/airflow/include/gcp/service_account.json
+    project: steam-reviews-zc
+    dataset: steam_reviews
+    threads: 4
+    timeout_seconds: 300
+    location: US

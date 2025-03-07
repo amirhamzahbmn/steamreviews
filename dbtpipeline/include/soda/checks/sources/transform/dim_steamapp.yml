@@ -1,0 +1,15 @@
+# dim_steamapp.yml
+    - schema:
+        fail:
+            when required column missing: [steam_appid, name, required_age, is_free, detailed_description, short_description]
+            when wrong column type:
+                steam_appid: string
+                name: string
+                required_age: int
+                is_free: bool
+                detailed_description: string
+                short_description: string
+    - duplicate_count(steam_appid) = 0:
+        name: All steam_appids are unique
+    - missing_count(steam_appid) = 0:
+        name: No steam_appid nulls present

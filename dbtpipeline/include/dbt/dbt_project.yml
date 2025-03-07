@@ -1,0 +1,12 @@
+# dbt_project.yml
+
+config-version: 2
+version: 2.0.0
+
+name: 'steam_reviews'
+
+profile: 'steam_reviews'
+
+models:
+  steam_reviews:
+    materialized: table
